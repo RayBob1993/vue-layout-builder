@@ -1,0 +1,61 @@
+{
+  "name": "vue-layout-builder",
+  "version": "1.0.0",
+  "description": "Новый CMG Nuxt проект",
+  "author": "Dmitry Turkov &lt;dmitry.turkov@convergent-usa.com&gt;",
+  "private": true,
+  "scripts": {
+    "serve": "nuxt --open",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">= 11.14.0"
+  },
+  "keywords": [
+    "nuxtjs",
+    "vuejs",
+    "javascript"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "git update-index -g"
+    }
+  },
+  "lint-staged": {
+    "**/*.vue": [
+      "eslint --fix",
+      "git add"
+    ],
+    "**/*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "**/*.md": [
+      "prettier --parser markdown --prose-wrap always --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@bazzite/nuxt-optimized-images": "^0.3.0",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "@platr/eslint-config-vue": "^0.1.3",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.1",
+    "lint-staged": "^10.0.2",
+    "node-sass": "^4.13.1",
+    "prettier": "^1.19.1",
+    "sass-loader": "^8.0.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "element-ui": "^2.13.0",
+    "nuxt": "^2.11.0",
+    "nuxt-client-init-module": "^0.1.7",
+    "vuedraggable": "^2.23.2"
+  }
+}
